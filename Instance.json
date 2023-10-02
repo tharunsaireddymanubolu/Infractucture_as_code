@@ -1,0 +1,65 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "Instance Creation",
+  "Parameters": {},
+  "Resources": {
+    "AnsibleMaster": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": "ami-0b828c1c5ac3f13ee",
+        "InstanceType": "t2.micro",
+        "KeyName": "Mykey",
+        "SecurityGroupIds": [
+          "sg-098b4f842c0142b43"
+        ],
+        "SubnetId": "subnet-0256ae392492aae27",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "AnsibleMaster"
+          }
+        ]
+      }
+    },
+    "DockerServer": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": "ami-0b828c1c5ac3f13ee",
+        "InstanceType": "t2.micro",
+        "KeyName": "Mykey",
+        "SecurityGroupIds": [
+          "sg-098b4f842c0142b43"
+        ],
+        "SubnetId": "subnet-0256ae392492aae27",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "DockerServer"
+          }
+        ]
+      }
+    },
+    "JFrogServer": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": "ami-042890a2c52315d75",
+        "InstanceType": "t2.medium",
+        "KeyName": "Mykey",
+        "SecurityGroupIds": [
+          "sg-098b4f842c0142b43"
+        ],
+        "SubnetId": "subnet-0256ae392492aae27",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "JFrogServer"
+          }
+        ]
+      }
+    }
+
+  },
+  "Outputs": {}
+  
+}
